@@ -9,7 +9,7 @@ const core = __nccwpck_require__(2186);
 module.exports = { getCommitFiles, getReposList, createPr, getRepo, getBranchesRemote };
 
 async function getCommitFiles(octokit, commitId, owner, repo) {
-  const { data: { files } } = await octokit.repos.getCommit({
+  const { data: { files } } = await octokit.rest.git.getCommit({
     owner,
     repo,
     ref: commitId
